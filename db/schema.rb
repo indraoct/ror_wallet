@@ -14,6 +14,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_28_152603) do
   create_table "transactions", force: :cascade do |t|
     t.integer "sender_id", null: false
     t.integer "receiver_id", null: false
+    t.float "amount"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

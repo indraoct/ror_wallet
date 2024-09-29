@@ -1,24 +1,11 @@
-# README
+# RoR Wallet
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An application about sending money and get info transaction (Interview Test)
 
-Things you may want to cover:
+## Prerequisites
+- Ruby (3.3.0 or higher)
+- Rails (7.2.1)
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Database Design
+![Alt text](db_diagram.png "Database Diagram")
