@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_28_152603) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_29_084551) do
   create_table "transactions", force: :cascade do |t|
     t.integer "sender_id", null: false
     t.integer "receiver_id", null: false
@@ -26,6 +26,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_28_152603) do
     t.string "username"
     t.string "password"
     t.string "salt"
+    t.string "password_digest"
   end
 
   create_table "wallets", force: :cascade do |t|
