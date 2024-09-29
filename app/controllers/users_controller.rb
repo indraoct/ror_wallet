@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       render json: {
         status: 404,
         message: 'User not found'
-      }
+      },status: :not_found
       return false
     end
     render json: @user
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
       render json: {
         status: 401,
         message: "Username or password can't be empty"
-      }
+      },status: :unauthorized
       return false
     end
 
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
       render json: {
         status: 401,
         message: "Username not found"
-      }
+      },status: :unauthorized
       return false
     end
 
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
       render json: {
         status: 401,
         message: "Invalid password"
-      }
+      },status: :unauthorized
       return false
       end
 
@@ -53,7 +53,7 @@ class UsersController < ApplicationController
       status: 200,
       message: "Login Successful",
       session_id:""
-    }
+    },status: :success
 
   end
 
