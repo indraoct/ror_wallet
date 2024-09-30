@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :authorized, only: [:login]
 
   def index
     @users = User.all
@@ -47,13 +48,17 @@ class UsersController < ApplicationController
         message: "Invalid password"
       },status: :unauthorized
       return false
-      end
+    end
+
+    #generate session_id (JWT)
+    user_id_encrypted = EncryptionService.encrypt(@user.id)
+    session_id = encode_token({user_id: user_id_encrypted})
 
     render json: {
       status: 200,
       message: "Login Successful",
-      session_id:""
-    },status: :success
+      session_id:session_id
+    },status:200
 
   end
 
