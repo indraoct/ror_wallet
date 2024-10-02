@@ -29,14 +29,14 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_29_084551) do
   end
 
   create_table "wallets", force: :cascade do |t|
-    t.integer "users_id", null: false
+    t.integer "user_id", null: false
     t.decimal "balance", precision: 15, scale: 2, default: "0.0"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["users_id"], name: "index_wallets_on_users_id"
+    t.index ["user_id"], name: "index_wallets_on_user_id"
   end
 
   add_foreign_key "transactions", "users", column: "receiver_id"
   add_foreign_key "transactions", "users", column: "sender_id"
-  add_foreign_key "wallets", "users", column: "users_id"
+  add_foreign_key "wallets", "users"
 end
