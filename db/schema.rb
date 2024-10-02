@@ -14,7 +14,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_29_084551) do
   create_table "transactions", force: :cascade do |t|
     t.integer "sender_id", null: false
     t.integer "receiver_id", null: false
-    t.float "amount"
+    t.decimal "amount", precision: 15, scale: 2, default: "0.0"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -30,7 +30,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_29_084551) do
 
   create_table "wallets", force: :cascade do |t|
     t.integer "users_id", null: false
-    t.float "balance", null: false
+    t.decimal "balance", precision: 15, scale: 2, default: "0.0"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["users_id"], name: "index_wallets_on_users_id"

@@ -14,3 +14,11 @@ users = User.create([
           password: 'Pass12345'
         }
 ])
+
+wallets = Wallet.create([
+          {
+            users_id: 1,
+            balance: 500000.00
+          }
+
+])
