@@ -1,0 +1,564 @@
+{
+	"info": {
+		"_postman_id": "680d190b-b17d-48a8-b921-6bf6dfc205b2",
+		"name": "RoR Wallet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "80425"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"indra\",\n    \"password\":\"Pass12345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/user/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"login"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "test",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "test12345",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"indra1\",\n    \"password\":\"Password12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/user/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"login"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "test",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "test12345",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "0"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "x-permitted-cross-domain-policies",
+							"value": "none"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "vary",
+							"value": "Accept, Origin"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"7a5a318c78f0023fe6dc49dc9139e554\""
+						},
+						{
+							"key": "cache-control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "x-request-id",
+							"value": "f47ead91-5331-42d1-94df-295da6ff3bcb"
+						},
+						{
+							"key": "x-runtime",
+							"value": "0.457238"
+						},
+						{
+							"key": "server-timing",
+							"value": "start_processing.action_controller;dur=0.02, sql.active_record;dur=0.30, instantiation.active_record;dur=0.25, process_action.action_controller;dur=442.89"
+						},
+						{
+							"key": "Content-Length",
+							"value": "290"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"Login Successful\",\n    \"session_id\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiV1d0VVNsUmxkU3NyZGtGWU4wazFPV2x5ZFV0MWR6MDlMUzByVTJOQmMwMHlVSE5hTWxOQ1RrdGFha3cxYjJSblBUMD0tLTM1ZDIyNGFkYTkyZDU4YmU4ZmIxNTRjMGYxODMxYjIwNzE3Y2VmODgifQ.yVogxUzXSSWCajrDL2j9A72Qktge8h3VIJcavs1ridY\"\n}"
+				}
+			]
+		},
+		{
+			"name": "User List",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiUzFjdk9UWkJXRGRzWm5KWVNVdEZXR04wYUVweVp6MDlMUzB3UVhGM1NsZDRiWFZhYVV4UFEyeFdNRk5tUTNSQlBUMD0tLTcyMGVhYjVkZWZhYzVmZTc4ZWFhMTE3MWQzNWJhYThiNTQ0YWVkODQifQ.-7M2VmsCJ55HzveJ6eDxfxw_WLP2mIU3-A90X2ugWfM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"test\",\n    \"password\":\"12345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "test",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "test12345",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "User List Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"test\",\n    \"password\":\"12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/users",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "test",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "test12345",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "0"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "x-permitted-cross-domain-policies",
+							"value": "none"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "vary",
+							"value": "Accept, Origin"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"a4b0358f3f61cb29a66e1aa20cd0b7b0\""
+						},
+						{
+							"key": "cache-control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "x-request-id",
+							"value": "f256789a-a91c-48c4-924f-d97c656fd975"
+						},
+						{
+							"key": "x-runtime",
+							"value": "0.048226"
+						},
+						{
+							"key": "server-timing",
+							"value": "sql.active_record;dur=9.57, start_processing.action_controller;dur=0.00, instantiation.active_record;dur=1.55, process_action.action_controller;dur=13.50"
+						},
+						{
+							"key": "Content-Length",
+							"value": "126"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"username\": \"indra\",\n        \"password\": null,\n        \"password_digest\": \"$2a$12$ILaDyrg5e3RgGxe6b9oKLurcGlg5rTrInHoQOfR0IRRbUhdDIov1W\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "User Show",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"test\",\n    \"password\":\"12345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"1"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "test",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "test12345",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "User Show Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"test\",\n    \"password\":\"12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/users/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"2"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "test",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "test12345",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "0"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "x-permitted-cross-domain-policies",
+							"value": "none"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "vary",
+							"value": "Accept, Origin"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"7ee9032cc026c05a7830e524ba7d5053\""
+						},
+						{
+							"key": "cache-control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "x-request-id",
+							"value": "ebe8af0c-cba7-49ae-986b-2b789d41b8f2"
+						},
+						{
+							"key": "x-runtime",
+							"value": "0.013394"
+						},
+						{
+							"key": "server-timing",
+							"value": "start_processing.action_controller;dur=0.01, sql.active_record;dur=0.25, instantiation.active_record;dur=0.08, process_action.action_controller;dur=4.17"
+						},
+						{
+							"key": "Content-Length",
+							"value": "125"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"username\": \"indra2\",\n    \"password\": null,\n    \"password_digest\": \"$2a$12$FsN/IR9BYMZ6m7QgAP1JX.9XVIOXCvn54Tf2FRTQVKN6hsdUunrcq\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Transaction - Create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiV1d0VVNsUmxkU3NyZGtGWU4wazFPV2x5ZFV0MWR6MDlMUzByVTJOQmMwMHlVSE5hTWxOQ1RrdGFha3cxYjJSblBUMD0tLTM1ZDIyNGFkYTkyZDU4YmU4ZmIxNTRjMGYxODMxYjIwNzE3Y2VmODgifQ.yVogxUzXSSWCajrDL2j9A72Qktge8h3VIJcavs1ridY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"sender_id\": 1,\n  \"receiver_id\": 2,\n  \"amount\": 200.0,\n  \"description\": \"Payment for services\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/transactions",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"transactions"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Transaction - Create Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"sender_id\": 1,\n  \"receiver_id\": 2,\n  \"amount\": 200.0,\n  \"description\": \"Payment for services\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/transactions",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"transactions"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "0"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "x-permitted-cross-domain-policies",
+							"value": "none"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "vary",
+							"value": "Accept, Origin"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"25d01aa83f1c535b5fcc99f6eaf83526\""
+						},
+						{
+							"key": "cache-control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "x-request-id",
+							"value": "c570519c-9ac2-4ff5-81de-85bc1ab1c26d"
+						},
+						{
+							"key": "x-runtime",
+							"value": "0.076692"
+						},
+						{
+							"key": "server-timing",
+							"value": "sql.active_record;dur=4.78, start_processing.action_controller;dur=0.01, instantiation.active_record;dur=3.91, start_transaction.active_record;dur=0.00, transaction.active_record;dur=23.71, process_action.action_controller;dur=40.89"
+						},
+						{
+							"key": "Content-Length",
+							"value": "296"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Transaction successful\",\n    \"sender\": {\n        \"user_id\": 1,\n        \"balance\": \"4800.0\",\n        \"id\": 1,\n        \"created_at\": \"2024-10-02T16:21:16.508Z\",\n        \"updated_at\": \"2024-10-02T17:17:20.611Z\"\n    },\n    \"receiver\": {\n        \"user_id\": 2,\n        \"balance\": \"3200.0\",\n        \"id\": 2,\n        \"created_at\": \"2024-10-02T16:21:16.512Z\",\n        \"updated_at\": \"2024-10-02T17:17:20.619Z\"\n    }\n}"
+				}
+			]
+		}
+	]
+}
